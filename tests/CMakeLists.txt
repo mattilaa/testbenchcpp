@@ -9,5 +9,5 @@ add_executable(benchmark
     benchmark.cpp
     )
 
-target_link_libraries(benchmark benchmark::benchmark)
-target_link_libraries(tests gtest pthread gtest_main)
+target_link_libraries(benchmark examplelib benchmark::benchmark)
+target_link_libraries(tests examplelib gtest pthread gtest_main)

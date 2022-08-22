@@ -1,6 +1,9 @@
 #include <gtest/gtest.h>
 
+#include "something.h"
+
 TEST(TestSuite, SimpleTest)
 {
-    std::cout << "Hello World\n";
+    TestClass t;
+    std::cout << t.getStr() << "\n";
 }
