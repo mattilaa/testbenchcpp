@@ -1,13 +1,27 @@
+# Find dependencies
 find_package(benchmark REQUIRED)
 find_package(GTest REQUIRED)
 
+# Add unit test files here
 add_executable(tests
     tests.cpp
     )
 
+# Add benchmark files here
 add_executable(benchmark
     benchmark.cpp
     )
 
-target_link_libraries(benchmark examplelib benchmark::benchmark)
-target_link_libraries(tests examplelib gtest pthread gtest_main)
+# Add library dependencies for benchmark here
+target_link_libraries(benchmark
+    examplelib
+    benchmark::benchmark
+    )
+
+# Add library dependencies for unit tests here
+target_link_libraries(tests
+    examplelib
+    gtest
+    gtest_main
+    pthread
+    )
